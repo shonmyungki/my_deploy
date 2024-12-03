@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: myweb-con
-        image: audrl346/mynginx:1
+        image: audrl346/mynginx:8
