@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
       - name: h-con
-        image: audrl346/hnginx:latest
+        image: audrl346/ipnginx:latest
