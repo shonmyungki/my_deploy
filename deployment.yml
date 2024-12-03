@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-h 
+  #서비스이름이 중요.
+  #나중에 ingress에서 이걸보고 찾아감.
+spec:
+  selector:
+    app: hnginx
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: h-dep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hnginx
+  template:
+    metadata:
+      name: h-pod
+      labels:
+        app: hnginx
+    spec:
+      containers:
+      - name: h-con
+        image: audrl346/hnginx:latest
